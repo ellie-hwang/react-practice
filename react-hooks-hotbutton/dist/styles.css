@@ -1,0 +1,34 @@
+button {
+  padding: 8px 12px;
+  border: 1px solid black;
+}
+
+.dark-blue {
+  background-color: darkblue ;
+  color: white;
+}
+
+.blue {
+  background-color: rgb(89, 89, 233);
+  color: white;
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.orange {
+  background-color: rgb(255, 101, 45);
+  color: white;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.white {
+  background-color: rgb(255, 253, 231);
+  color: black;
+}
