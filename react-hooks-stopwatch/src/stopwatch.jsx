@@ -8,13 +8,17 @@ function StopWatch() {
     let intId = null;
     if (isTicking === true) {
       intId = setInterval(() => {
-        setSecondsElapsed(secondsElapsed => secondsElapsed + 1)
+        setSecondsElapsed(secondsElapsed + 1)
       }, 1000);
     } else if (isTicking === false) {
       clearInterval(intId);
     }
     return () => clearInterval(intId);
   }, [isTicking, secondsElapsed]);
+
+  function toggleTicking() {
+    setTicking(!isTicking);
+  }
 
   function reset() {
     if (isTicking === false) {
@@ -29,7 +33,7 @@ function StopWatch() {
         <p>{secondsElapsed}</p>
       </div>
       <div id="icon-container">
-        <i onClick={() => setTicking(!isTicking)} className={icon} />
+        <i onClick={toggleTicking} className={icon} />
       </div>
     </div>
   );
