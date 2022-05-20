@@ -1,0 +1,39 @@
+#watchface {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border: 5px solid black;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+#icon-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+
+p {
+  position: absolute;
+  font-size: 5em;
+  font-family: sans-serif;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+i {
+  font-size: 2em;
+  cursor: pointer;
+}
