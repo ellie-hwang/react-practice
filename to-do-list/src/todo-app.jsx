@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-function Todo({ todo, index, completeTodo }) {
+function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
     <div className="todo px-2 py-1 mb-2" style={{textDecoration: todo.isCompleted ? "line-through" : ""}}>
       {todo.text}
       <div>
         <button className="btn btn-secondary" onClick={() => completeTodo(index)}>Complete</button>
+        <button className="btn red" onClick={() => removeTodo(index)}>X</button>
       </div>
     </div>
   );
@@ -60,6 +61,12 @@ function TodoApp() {
     setTodos(newTodos);
   };
 
+  const removeTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  }
+
   return (
     <div className="container-fluid">
       <div className="row d-flex justify-content-center">
@@ -70,7 +77,7 @@ function TodoApp() {
               <TodoForm addTodo={addTodo} />
               {
                 todos.map((todo, index) => (
-                  <Todo key={index} index={index} todo={todo} completeTodo={completeTodo} />
+                  <Todo key={index} index={index} todo={todo} completeTodo={completeTodo} removeTodo={removeTodo} />
                 ))
               }
             </div>
