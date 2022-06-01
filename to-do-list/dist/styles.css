@@ -4,20 +4,17 @@
 
 body {
   margin: 0;
+  background: rgb(190, 190, 190);
 }
 
 .container-fluid {
   margin: 0 auto;
   padding: 1.5rem;
 }
-
-.justify-content-center {
-  justify-content: center;
-}
-
+/*
 .form-control {
   width: 100%;
-}
+} */
 
 .form-control :focus {
   outline:none;
@@ -31,4 +28,23 @@ body {
   border: none;
   border-radius: 4px;
   padding: 8px 10px;
+}
+
+.todo-list {
+  background: #eeeeee;
+  border-radius: 4px;
+}
+
+.todo {
+  align-items: center;
+  background: rgb(255, 255, 255);
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+}
+
+.red {
+  background-color: rgb(255, 64, 64);
+  color: white;
 }
