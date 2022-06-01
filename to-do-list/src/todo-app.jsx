@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-function Todo({ todo }) {
+function Todo({ todo, index, completeTodo }) {
   return (
-    <div className="todo px-2 py-1 mb-2">
+    <div className="todo px-2 py-1 mb-2" style={{textDecoration: todo.isCompleted ? "line-through" : ""}}>
       {todo.text}
+      <div>
+        <button className="btn btn-secondary" onClick={() => completeTodo(index)}>Complete</button>
+      </div>
     </div>
   );
 };
@@ -33,18 +36,27 @@ function TodoForm({ addTodo }) {
 function TodoApp() {
   const [todos, setTodos] = useState([
     {
-      text: "Feed doggie"
+      text: "Feed doggie",
+      isCompleted: false
     },
     {
-      text: "Buy groceries"
+      text: "Buy groceries",
+      isCompleted: false
     },
     {
-      text: "Do homework"
+      text: "Do homework",
+      isCompleted: false
     }
   ]);
 
   const addTodo = (text) => {
     const newTodos = [...todos, { text }];
+    setTodos(newTodos);
+  };
+
+  const completeTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].isCompleted = true;
     setTodos(newTodos);
   };
 
@@ -58,7 +70,7 @@ function TodoApp() {
               <TodoForm addTodo={addTodo} />
               {
                 todos.map((todo, index) => (
-                  <Todo key={index} index={index} todo={todo} />
+                  <Todo key={index} index={index} todo={todo} completeTodo={completeTodo} />
                 ))
               }
             </div>
