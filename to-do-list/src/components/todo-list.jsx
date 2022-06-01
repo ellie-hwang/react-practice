@@ -22,7 +22,7 @@ function TodoList() {
   const todoList = tasks.map((task) => {
     return (
       <li key={task.id.toString()} style={{ textDecoration: task.completed ? "line-through" : "" }}>
-        {task.text} Hellooooo
+        {task.text}
       </li>
     )
   })
