@@ -1,17 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Carousel from './carousel';
+
+const characters = [
+  {
+    id: 1,
+    name: 'Webber',
+    url: 'images/webber.jpg'
+  },
+  {
+    id: 2,
+    name: 'Wilson',
+    url: 'images/wilson.jpg'
+  },
+  {
+    id: 3,
+    name: 'Willow',
+    url: 'images/willow.jpg'
+  },
+  {
+    id: 4,
+    name: 'Wendy',
+    url: 'images/wendy.jpg'
+  },
+  {
+    id: 5,
+    name: 'Woody',
+    url: 'images/woody.jpg'
+  }
+];
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Carousel characters={characters} />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
