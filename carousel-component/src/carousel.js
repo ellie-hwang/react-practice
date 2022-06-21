@@ -21,29 +21,29 @@ function Carousel(props) {
     }
   }
 
-  // const active = activeImgId ? '' : 'display-none';
-  // const imgList = characters.map(character => {
-  //   if (activeImgId === character.id) {
-  //     return (
-  //       <CharacterImg character={character} active={active} key={character.id.toString()} />
-  //     );
-  //   } else {
-  //     return (
-  //       <CharacterImg character={character} active='display-none' key={character.id.toString()} />
-  //     );
-  //   }
-  // });
-  // const circles = characters.map(character => {
-  //   if (activeImgId === character.id) {
-  //     return (
-  //       <i className="fa-solid fa-circle mx-1" key={character.id.toString()} data-id={character.id} onClick={handleClick} />
-  //     );
-  //   } else {
-  //     return (
-  //       <i className="fa-regular fa-circle mx-1" key={character.id.toString()} data-id={character.id} onClick={handleClick} />
-  //     );
-  //   }
-  // });
+  const active = activeImgId ? '' : 'display-none';
+  const imgList = characters.map(character => {
+    if (activeImgId === character.id) {
+      return (
+        <CharacterImg character={character} active={active} key={character.id.toString()} />
+      );
+    } else {
+      return (
+        <CharacterImg character={character} active='display-none' key={character.id.toString()} />
+      );
+    }
+  });
+  const circles = characters.map(character => {
+    if (activeImgId === character.id) {
+      return (
+        <i className="fa-solid fa-circle mx-1" key={character.id.toString()} data-id={character.id} onClick={handleClick} />
+      );
+    } else {
+      return (
+        <i className="fa-regular fa-circle mx-1" key={character.id.toString()} data-id={character.id} onClick={handleClick} />
+      );
+    }
+  });
 
   return (
     <div className="container">
@@ -51,24 +51,24 @@ function Carousel(props) {
         <div className="text-center">
           <i className="fa-solid fa-angle-left" onClick={handleClick}/>
           <div className="img-container mx-3 mb-3">
-            {/* {imgList} */}
+            {imgList}
           </div>
           <i className="fa-solid fa-angle-right" onClick={handleClick}/>
         </div>
         <div className="cicles text-center">
-          {/* {circles} */}
+          {circles}
         </div>
       </div>
     </div>
   );
 }
 
-// function CharacterImg(props) {
-//   const { id, name, url } = props.character;
+function CharacterImg(props) {
+  const { id, name, url } = props.character;
 
-//   return (
-//     <img src={url} alt={name} className={`${props.active} img-fluid character-img`} data-id={id} />
-//   );
-// }
+  return (
+    <img src={url} alt={name} className={`${props.active} img-fluid character-img`} data-id={id} />
+  );
+}
 
 export default Carousel;
