@@ -1,0 +1,59 @@
+.display-none {
+  display: none;
+}
+
+.container-fluid {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.img-container {
+  width: 450px;
+  height: 250px;
+  display: inline-block;
+}
+
+.character-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fa-angle-left,
+.fa-angle-right {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.fa-circle {
+  font-size: 1rem;
+  cursor: pointer;
+}
