@@ -2,6 +2,10 @@ import React from 'react';
 import './ExpenseForm.css';
 
 function ExpenseForm() {
+  const titleChangeHandler = () => {
+    console.log('Title changed');
+  };
+
   return (
     <form>
       <div className="new-expense__controls">
@@ -11,7 +15,7 @@ function ExpenseForm() {
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
-          <input type="text"/>
+          <input type="text" onChange={titleChangeHandler}/>
         </div>
         <div className="new-expense__control">
           <label>Date</label>
